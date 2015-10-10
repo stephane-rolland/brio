@@ -1,11 +1,17 @@
 <template name="card">
-  <nav>
-    <div class="container">
-      <div class="card-wrapper">
-          {{#each cards}}
-          <p>{{text}}</p>
-          {{/each}}
+  <div class="container">
+    {{#each cards}}
+      <div class="card">
+        <div class="card-image">
+          <!--img src="images/sample-1.jpg"-->
+          <span class="card-title">{{text}}</span>
+        </div>
+        <div class="card-content">
+        {{text}}
+        </div>
+        <div class="card-action">
+        </div>
       </div>
-    </div>
-  </nav>
+      {{/each}}
+  </div>
 </template>

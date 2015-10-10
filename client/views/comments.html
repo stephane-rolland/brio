@@ -1,0 +1,26 @@
+<template name="cardComments">
+  {{#each comments}}
+    {{> cardComment}}
+  {{/each}}
+  {{> cardCommentAddForm}}
+</template>
+
+<template name="cardComment">
+  <div>
+    {{content}}
+  </div>
+</template>
+
+<template name="cardCommentAddForm">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="add-a-comment" class="materialize-textarea"></textarea>
+          <label for="add-a-comment">Add a comment</label>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn-large">Submit</button>
+      </div>
+    </form>
+  </div>
+</template>
