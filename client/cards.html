@@ -2,16 +2,7 @@
   <div class="container">
     {{#each cards}}
       <div class="cards">
-        <div class="card-image">
-          <!--<img src="images/sample-1.jpg">-->
-          <!--<span class="card-title">{{text}}</span>-->
-        </div>
-        <div class="card-content">
-        {{text}}
-        </div>
-        <div class="card-action">
-          {{> evaluation}}
-        </div>
+        {{> card}}
       </div>
       {{/each}}
   </div>

@@ -7,6 +7,7 @@
           <li id="nav-home"><a href="{{pathFor 'home'}}">Home</a></li>
           {{#each lessons}}
           <li id="nav-lesson-{{_id}}"><a href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
+          <!-- <li id="nav-lesson-{{_id}}"><a href="{{pathFor 'singleCard'}}/{{_id}}">{{title}}</a></li> -->
           {{/each}}
           <li>{{> atNavButton }}</li>
         </ul>
