@@ -1,6 +1,6 @@
 Meteor.startup(function() {
   // We only import the boilerplate data if the database is empty
-  if (! Cards.find().count() === 0) {
+  if (Cards.find().count() !== 0) {
     return;
   }
 
