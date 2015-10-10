@@ -6,7 +6,7 @@
         <ul id="nav-mobile" class="right side-nav fixed">
           <li><a href="{{pathFor 'home'}}">Home</a></li>
           {{#each lessons}}
-          <li><a href="{{pathFor 'lesson'}}">{{title}}</a></li>
+          <li><a href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
           {{/each}}
           <li>{{> atNavButton }}</li>
         </ul>
