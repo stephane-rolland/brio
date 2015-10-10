@@ -3,7 +3,26 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+insecure                # Allow all DB writes from clients (for prototyping)
+logging
+reload
+random
+ejson
+spacebars
+check
+
 zimme:active-route
 accounts-password
 # accounts-google
@@ -12,7 +31,7 @@ accounts-password
 underscore
 
 useraccounts:materialize
-materialize:materialize
+materialize:materialize@=0.97.0
 fortawesome:fontawesome
 useraccounts:flow-routing
 
