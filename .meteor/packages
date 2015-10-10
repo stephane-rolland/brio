@@ -9,6 +9,7 @@ accounts-password
 accounts-google
 accounts-github
 service-configuration
+underscore
 insecure
 
 useraccounts:materialize
