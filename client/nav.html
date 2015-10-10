@@ -4,9 +4,10 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">AccountsTemplates</a>
         <ul id="nav-mobile" class="right side-nav fixed">
-          <li><a href="{{pathFor 'home'}}">Home</a></li>
+          <li id="nav-home"><a href="{{pathFor 'home'}}">Home</a></li>
           {{#each lessons}}
-          <li><a href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
+          <li id="nav-lesson-{{_id}}"><a href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
+          <!-- <li id="nav-lesson-{{_id}}"><a href="{{pathFor 'singleCard'}}/{{_id}}">{{title}}</a></li> -->
           {{/each}}
           <!-- <li>{{> atNavButton }}</li> -->
         </ul>

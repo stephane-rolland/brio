@@ -1,5 +1,7 @@
 Template.nav.rendered = function () {
-  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav();
+  $('ul#nav-mobile li').removeClass('active');
+  $('#'+Session.get('selectedMenuId')).addClass('active');
 };
 
 Template.nav.helpers({

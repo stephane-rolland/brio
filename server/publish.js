@@ -3,5 +3,5 @@ Meteor.publish('lessons', function() {
 });
 
 Meteor.publish('cards', function(lessonId) {
-  return Cards.find({inLessons: {$in: [lessonId]}});
+  return Cards.find({inLessons: lessonId});
 });
