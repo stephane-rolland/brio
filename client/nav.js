@@ -15,7 +15,7 @@ Template.nav.helpers({
 });
 
 Template.nav.events({
-  'click .js-HACK-reload'() {
-    window.location.reload();
+  'click .js-HACK-reload'(evt) {
+    window.location.href = evt.target.href;
   }
 });
