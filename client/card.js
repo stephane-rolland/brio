@@ -1,5 +1,6 @@
 Template.card.onCreated(function() {
   this.autorun(() => {
+    Session.get('cardId');
     this.showComment = new ReactiveVar(false);
   });
 });
