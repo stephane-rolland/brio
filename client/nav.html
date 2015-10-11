@@ -5,7 +5,7 @@
         <a href="#" class="brand-logo center">Brio</a>
         {{#if currentUser}}
         <ul id="nav-mobile" class="right side-nav fixed">
-          <li id="nav-home"><a href="{{pathFor 'home'}}">Home</a></li>
+          <!--li id="nav-home"><a href="{{pathFor 'home'}}">Home</a></li-->
           {{#each lessons}}
           <li id="nav-lesson-{{_id}}"><a href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
           {{/each}}
