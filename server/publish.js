@@ -15,6 +15,11 @@ Meteor.publishComposite('cards', function(lessonId) {
         find(card) {
           return Comments.find({ cardId: card._id })
         }
+      },
+      {
+        find(card) {
+          return Evaluations.find({ userId: this.userId, cardId: card._id });
+        }
       }
     ]
   };
