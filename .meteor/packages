@@ -46,3 +46,5 @@ aldeed:collection2
 cfs:gridfs
 cfs:standard-packages
 dburles:collection-helpers
+matb33:collection-hooks
+reywood:publish-composite

@@ -1,6 +1,6 @@
 Template.cardComments.helpers({
   comments() {
-    Comments.find({ cardId: Session.get('currentCard') });
+    Comments.find({ cardId: Session.get('cardId') });
   },
 });
 
@@ -10,13 +10,13 @@ Template.cardCommentAddForm.events({
     let textarea = tpl.$('#add-a-comment');
     let comment = textarea.val();
     let userId = Meteor.userId();
-    let currentCard = Session.get('currentCard');
+    let cardId = Session.get('cardId');
 
     Comments.insert({
-      userId,
-      cardId: currentCard,
+      cardId: cardId,
       content: comment,
-      votes: [userId]
+      votes: [Meteor.userId()],
+      language: 'fr',
     });
     // Emptiy the textarea
     textarea.val('');

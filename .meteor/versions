@@ -64,6 +64,7 @@ launch-screen@1.0.4
 livedata@1.0.15
 localstorage@1.0.5
 logging@1.0.8
+matb33:collection-hooks@0.8.1
 materialize:materialize@0.97.0
 meteor@1.1.9
 meteor-base@1.0.1
@@ -86,6 +87,7 @@ reactive-dict@1.1.2
 reactive-var@1.0.6
 reload@1.1.4
 retry@1.0.4
+reywood:publish-composite@1.4.2
 routepolicy@1.0.6
 service-configuration@1.0.5
 session@1.1.1
