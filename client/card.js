@@ -1,8 +1,7 @@
 Template.card.onCreated(function() {
   this.autorun(() => {
-
-  this.showComment = new ReactiveVar(false);
-});
+    this.showComment = new ReactiveVar(false);
+  });
 });
 
 Template.card.helpers({

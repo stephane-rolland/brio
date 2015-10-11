@@ -21,7 +21,7 @@ body {
 }
 
 .home-landscape {
-  background: url(/imgs/books-background.jpg);
+  background: url(/imgs/books-background.jpg) top center;
   height: 500px;
   color: white;
   text-align: center;
@@ -75,4 +75,9 @@ footer {
   .container {
     width: 98%;
   }
+}
+
+#content .card {
+  max-width: 600px;
+  margin: 30px auto;
 }
