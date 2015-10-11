@@ -1,18 +1,23 @@
+Template.evaluation.helpers({
+  evaluations() {
+    return [
+      { label: 'Unknowed', note: 1 },
+      { label: 'Bof', note: 2 },
+      { label: 'So-so', note: 3 },
+      { label: 'Good', note: 4 },
+      { label: 'Brio!', note: 5 },
+    ];
+  }
+});
+
 Template.evaluation.events({
-    'change #eval': function(event){
+  'click .js-evaluate'() {
+    const cardId = Session.get('cardId');
+    const note = this.note;
 
-      const cardId = Session.get('cardId');
-      const note = event.target.value;
+    Evaluations.insert({ cardId, note });
 
-      Evaluations.insert({
-        cardId:cardId,
-        note:note
-      });
-
-      // move to the next training card
-      nextCard();
-
-      // reset the slider to zero for the next card
-      event.target.value = 2;
-    }
+    // move to the next training card
+    nextCard();
+  }
 });

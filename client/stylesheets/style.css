@@ -81,3 +81,32 @@ footer {
   max-width: 600px;
   margin: 30px auto;
 }
+
+.evaluation {
+  width: 20%;
+  float: left;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 8px 0;
+}
+
+.evaluation:hover {
+  background: #F1F1F1;
+}
+
+.evaluation img {
+  width: 75%;
+  margin: 0 12.5%;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}

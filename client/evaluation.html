@@ -1,9 +1,11 @@
 <template name="evaluation">
-  <div class="container">
-      <form action="#">
-        <p class="range-field">
-          <input type="range" id="eval" min="1" max="5" />
-        </p>
-      </form>
+  <div class="container evalutations">
+    {{#each evaluations}}
+      <div class="evaluation js-evaluate">
+        <img src="/evaluations/level-{{note}}.png" />
+        {{label}}
+      </div>
+    {{/each}}
+    <div class="clearfix"></div>
   </div>
 </template>
