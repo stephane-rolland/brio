@@ -1,4 +1,4 @@
-Template.card.onCreated(function() {
+Template.card.onRendered(function() {
   this.showComment = new ReactiveVar(false);
 });
 
@@ -13,3 +13,7 @@ Template.card.events({
     Template.instance().showComment.set(true);
   }
 })
+
+resetComment = function (){
+  Template.instance().showComment.set(false);
+}

@@ -10,12 +10,19 @@ Meteor.startup(function() {
     password: 'admin'
   });
 
+  import_lesson_file(userId,'English words','default_lesson_english.txt');
+  import_lesson_file(userId,'Chinese words','default_lesson_chinese.txt');
+
+});
+
+function import_lesson_file(userId, lessonTitle, filePath){
+
   var lessonId = Lessons.insert({
-    title: 'English words',
+    title: lessonTitle,
     userId: userId
   });
 
-  var lines = Assets.getText('default_lesson_english.txt').split('\n');
+  var lines = Assets.getText(filePath).split('\n');
   _.each(lines, function(line) {
     var parts = line.split('§');
     var word = parts[0].trim();
@@ -26,7 +33,14 @@ Meteor.startup(function() {
     });
 
     if (definition) {
-      Comments.insert({ content: definition });
+      Comments.insert({
+        userId: userId,
+        content: definition,
+        cardId: cardId,
+        language: 'fr',
+        createdAt: new Date(),
+      });
     }
-  });
-});
+  }
+);
+};

@@ -1,5 +1,14 @@
 Template.evaluation.events({
     'change #eval': function(event){
-      Session.set('currentEvaluation',event.target.value);
+
+      const cardId = Session.get('cardId');
+      const note = event.target.value;
+
+      Evaluations.insert({
+        cardId:cardId,
+        note:note
+        });
+
+      nextCard();
     }
 });

@@ -15,7 +15,14 @@ Evaluations.attachSchema({
   },
 });
 
-Cards.before.insert((userId, doc) => {
+function onInsert(userId, doc)
+{
+  console.log(userId);
+
   doc.createdAt = new Date();
   doc.userId = userId;
-});
+}
+
+Evaluations.before.insert(
+  onInsert
+);

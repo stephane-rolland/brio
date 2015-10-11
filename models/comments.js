@@ -16,6 +16,7 @@ Comments.attachSchema({
   // is used for the sorting algorithm on the card solution.
   votes: {
     type: [String],
+    defaultValue: [],
   },
   createdAt: {
     type: Date,
