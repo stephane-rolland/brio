@@ -6,5 +6,9 @@ Lessons.attachSchema({
   },
   userId: {
     type: String,
+  },
+  imgUrl: {
+  	type: String,
+  	optional: true,
   }
 });

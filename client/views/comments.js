@@ -2,6 +2,9 @@ Template.cardComments.helpers({
   comments() {
     return Comments.find({ cardId: Session.get('cardId') });
   },
+  commentCount: function() {
+    return Comments.find({ cardId: Session.get('cardId') }).count();
+  }
 });
 
 Template.cardComment.helpers({

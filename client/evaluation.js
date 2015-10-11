@@ -1,7 +1,7 @@
 Template.evaluation.helpers({
   evaluations() {
     return [
-      { label: 'Unknowed', note: 1 },
+      { label: 'Unknown', note: 1 },
       { label: 'Bof', note: 2 },
       { label: 'So-so', note: 3 },
       { label: 'Good', note: 4 },
