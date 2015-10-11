@@ -20,6 +20,18 @@ body {
   }
 }
 
+.home-landscape {
+  background: url(/imgs/books-background.jpg);
+  height: 500px;
+  color: white;
+  text-align: center;
+  margin-top: -60px;
+}
+
+.home-landscape h1 {
+  padding-top: 200px;
+}
+
 footer {
   position: absolute;
   bottom: 0;
