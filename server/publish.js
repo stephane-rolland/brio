@@ -8,7 +8,7 @@ Meteor.publishComposite('cards', function(lessonId) {
       return Cards.find({ inLessons: lessonId },
         // Accelerate things by only publishing the first 50 items
         // @TODO something more clever here, such as customized pagination
-        {limit: 100});
+        {limit: 1000});
     },
     children: [
       {

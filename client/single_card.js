@@ -29,6 +29,8 @@ Template.singleCard.animations({
 
 // global function, callable from somewhere else
 nextCard = function (){
+  console.log("nextCard");
+
   const cards = Cards.find().fetch();
   const randomId = parseInt((Math.random()*cards.length),10);
   //const chosenCardId = cards[randomId]._id;
@@ -39,71 +41,54 @@ nextCard = function (){
   return chosenCardId;
 }
 
-
-function isEvaluationAtGoodLevel(card, level){
-  //const isOk = getLastEvaluation(card) && (getLastEvaluation(card).note == level);
-  const lastEval = getLastEvaluation(card);
-  if (lastEval){
-    //console.log("level attendu =" + level);
-    //console.log("note evaluation =" + lastEval.note );
-    //console.log(lastEval);
-  }
-  const isOk = lastEval;
-  return isOk;
-}
-
 function chooseCard (){
-
-  const evals = Evaluations.find().fetch();
-  //console.log("nb evals =" + evals.length);
 
   // a number between 0 and 100
   const randomInt = parseInt((Math.random()*100),10);
   const level = computeLevel(randomInt);
 
-  //console.log("level = " + level);
+  console.log("level = " + level);
 
-  // pour chaque carte de la leçon  la collection Cards
-  // demander la derniere evaluation sur cette carte
-  // si elle est du bon level recherché, la mettre de coté
-  // les mettre dans un array
   const allCards = Cards.find().fetch();
-  //console.log("all = " + allCards.length );
 
-  const workingArray = Cards.find().fetch().filter( (x) => isEvaluationAtGoodLevel(x, level) );
-  const notEnoughNewCards = workingArray.length < 10;
+  const workingArray = Cards.find({note:level}).fetch();
+  const newCards = Cards.find({note:1}).fetch();
+  console.log("1 star cards = "+newCards.length);
+  let takeANewCard = newCards.length < 10 ;
 
-  //console.log("workingArray = " + workingArray.length)
-  //console.log("notEnoughNewCards = " + notEnoughNewCards)
+  if(workingArray.length == 0 && newCards.length < 10)
+  {
+      takeANewCard = true;
+  }
 
-  //const takeANewCard = (allCards.length ==0) || (workingArray.length == 0) || (level==1 && notEnoughNewCards);
-  const takeANewCard = Math.random() > 0.9 ;
+  if(Cards.find({note:0}).fetch().length == 0)
+  {
+      takeANewCard = false;
+      console.log("No More New cards to learn");
+  }
 
-  if (takeANewCard || workingArray.length == 0)  {
-    //console.log("take a new card!");
-
-    // si jamaias tiré le level 1 star , et que moins de 10 cartes avec 1 seule étoile
-    // on prend la premiere qui n'a pas d'évaluation
-    const cardId = getFirstCardWithoutEvaluation();
-    //console.log("first without eval = " + cardId);
-    if (cardId === null)
-    {
-      return chooseCard();
-    }
-    else {
-      return cardId;
-    }
+  console.log("takeANewCard = " + takeANewCard)
+  if (takeANewCard )  {
+    console.log("take a new card!");
+    const cardId = getFirstCardWithoutEvaluation(allCards);
+    return cardId;
   }
   else {
-    // choisir au hasard dans ce working array
 
     const randomValue = (Math.random()*(workingArray.length));
     //console.log("randomValue = " + randomValue);
     const workingCardId = parseInt(randomValue,10);
     //console.log(workingArray);
     //console.log("workingCardId = " + workingCardId );
-    const cardId = workingArray[workingCardId]._id;
-    return cardId;
+    if(workingArray.length > 0)
+    {
+      const cardId = workingArray[workingCardId]._id;
+      return cardId;
+    }
+    else {
+      return newCards[0]._id;
+    }
+
   }
 }
 
@@ -124,27 +109,12 @@ function computeLevel (randomInt){
 }
 
 function predicateNoEval(card){
-  return getLastEvaluation(card) === null;
+  return card.note == 0;
 }
 
-function getFirstCardWithoutEvaluation(){
-  const allCards = Cards.find().fetch();
-
-  //console.log("nb all cards = " + allCards.length);
-
+function getFirstCardWithoutEvaluation(allCards){
   const cardsWithoutEval = allCards.filter(predicateNoEval);
-
-
-
-  if (cardsWithoutEval.length > 0){
-    //console.log("first card without eval id = " + cardsWithoutEval[0]._id);
-    return cardsWithoutEval[0]._id;
-  }
-  else{
-    //console.log("no cards without eval");
-    return null;
-  }
-
+  return cardsWithoutEval[0]._id;
 }
 
 // étant donné l'id d'une card
@@ -152,13 +122,6 @@ function getFirstCardWithoutEvaluation(){
 function getLastEvaluation(card){
 
   const evals = Evaluations.find({cardId:card._id}).fetch(); // , {sort:{createdAt:-1}
-
-  if (evals.length > 0)
-  {
-    //console.log(card._id);
-    //console.log("nb evaluations = " );
-    //console.log(evals.length);
-  }
 
   if (evals.length > 0){
     //console.log("last eval =", evals[0]);

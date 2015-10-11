@@ -12,12 +12,16 @@ Template.evaluation.helpers({
 
 Template.evaluation.events({
   'click .js-evaluate'() {
+    console.log("insert event");
+
     const cardId = Session.get('cardId');
     console.log(cardId);
     const note = this.note;
+    console.log(note);
+    Cards.update({_id:cardId},{$set:{note: note}});
 
-    console.log("insert please!");
-    Evaluations.insert({ cardId, note });
+    console.log("insert note = " + note);
+    //Evaluations.insert({ cardId, note });
 
     Session.set('cardId', '');
     Tracker.flush();
