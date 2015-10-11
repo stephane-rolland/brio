@@ -10,5 +10,14 @@
     <div class="card-action">
       {{> evaluation}}
     </div>
+    {{#if showComments}}
+      <div class="card-content">
+        {{> cardComments}}
+      </div>
+    {{else}}
+      <div class="card-action">
+        <a class="waves-effect waves-teal btn-flat js-disclose-content"><i class="fa fa-eye"></i> Disclose content</a>
+      </div>
+    {{/if}}
   </div>
 </template>
