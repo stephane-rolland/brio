@@ -100,6 +100,10 @@ footer {
   height: 700px;
 }
 
+.card-image img {
+  max-height: 400px;
+}
+
 @media only screen and (min-width: 993px) {
   .card-viewer {
     left: 240px;
