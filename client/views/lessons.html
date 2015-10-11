@@ -1,10 +1,11 @@
 <template name="lessons">
   <div class="lessons-viewer">
     <h2>Select a lesson</h2>
-	<div class="collection">
-	  {{#each lessons}}
-	  <a href="{{pathFor 'lesson'}}/{{_id}}" class="collection-item">{{title}}</a>
-	  {{/each}}
-	</div>
+    <div class="collection">
+      {{#each lessons}}
+        <a href="{{pathFor 'lesson'}}/{{_id}}" class="collection-item">{{title}}</a>
+      {{/each}}
+    </div>
+    <a class="waves-effect waves-light btn pink darken-3" href="#"><i class="fa fa-upload"></i> Upload a lesson</a>
   </div>
 </template>
