@@ -22,3 +22,8 @@ Comments.attachSchema({
     type: String,
   },
 });
+
+Comments.before.insert((userId, doc) => {
+  doc.createdAt = new Date();
+  doc.userId = userId;
+});

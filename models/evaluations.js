@@ -14,3 +14,8 @@ Evaluations.attachSchema({
     type: Number,
   },
 });
+
+Cards.before.insert((userId, doc) => {
+  doc.createdAt = new Date();
+  doc.userId = userId;
+});
