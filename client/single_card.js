@@ -10,13 +10,21 @@ Template.singleCard.onCreated(function() {
 });
 
 Template.singleCard.helpers({
-    currentCard: function(){
+  currentCard: function(){
+    const cardId = Session.get('cardId');
+    return Cards.findOne(cardId);
+  }
+});
 
-      const cardId = Session.get('cardId');
-
-      return Cards.findOne(cardId);
-    }
-
+Template.singleCard.animations({
+  ".card": {
+    animateInitial: true,
+    animateInitialStep: 100,
+    animateInitialDelay: 0,
+    container: ".card-viewer",
+    in: "animated fast fadeInRight",
+    out: "animated fast fadeOutLeft",
+  }
 });
 
 // global function, callable from somewhere else
@@ -26,7 +34,6 @@ nextCard = function (){
   const chosenCardId = cards[randomId]._id;
 
   //const chosenCardId = chooseCard();
-
   Session.set('cardId', chosenCardId);
 }
 

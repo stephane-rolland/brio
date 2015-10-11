@@ -29,6 +29,7 @@ accounts-password
 # accounts-github
 # service-configuration
 underscore
+natestrauser:animate-css
 
 useraccounts:materialize
 materialize:materialize@=0.97.0
@@ -40,6 +41,7 @@ reactive-var
 kadira:blaze-layout
 kadira:flow-router
 arillo:flow-router-helpers
+gwendall:template-animations
 
 # Collections
 aldeed:collection2
