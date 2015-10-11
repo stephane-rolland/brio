@@ -13,8 +13,10 @@ Template.evaluation.helpers({
 Template.evaluation.events({
   'click .js-evaluate'() {
     const cardId = Session.get('cardId');
+    console.log(cardId);
     const note = this.note;
 
+    console.log("insert please!");
     Evaluations.insert({ cardId, note });
 
     // move to the next training card
