@@ -13,6 +13,6 @@ Template.evaluation.events({
       nextCard();
 
       // reset the slider to zero for the next card
-      event.target.value = 0;
+      event.target.value = 2;
     }
 });
