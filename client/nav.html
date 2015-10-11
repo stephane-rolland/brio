@@ -3,7 +3,7 @@
   <ul id="dropdown1" class="dropdown-content">
     <li><a id="nav-logout" href="/"><i class="fa fa-cog left"></i> Settings</a></li>
     <li class="divider"></li>
-    <li><a id="nav-logout" href="/"><i class="fa fa-power-off left"></i> Sign out</a></li>
+    <li><a id="nav-logout" href="/home" class="js-HACK-reload"><i class="fa fa-power-off left"></i> Sign out</a></li>
   </ul>
 
   <nav>
@@ -23,7 +23,7 @@
           <li id="nav-lesson-{{_id}}"><a class="js-HACK-reload" href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
           {{/if}}
           {{/each}}
-          <li class="hide-on-large-only"><a class="js-HACK-reload" id="nav-logout" href="/">Disconnect</a></li>
+          <li class="hide-on-large-only"><a class="js-HACK-reload" id="nav-logout" href="/home">Disconnect</a></li>
         </ul>
         <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
         {{/if}}
