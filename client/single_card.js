@@ -2,9 +2,10 @@
 // so as to run nextCard once we are ready
 // we have set a reactive computation watching subsready, which is ok true when we have received the Cards data
 Template.singleCard.onCreated(function() {
-  this.autorun(function() {
+  let handle = this.autorun(function() {
     if (FlowRouter.subsReady('cards')) {
       Session.set('cardId', nextCard());
+      handle.stop();
     }
   });
 });
