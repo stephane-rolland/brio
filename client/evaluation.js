@@ -5,7 +5,7 @@ Template.evaluation.helpers({
       { label: 'Bof', note: 2 },
       { label: 'So-so', note: 3 },
       { label: 'Good', note: 4 },
-      { label: 'Brio!', note: 5 },
+      { label: 'Brio', note: 5 },
     ];
   }
 });
@@ -19,7 +19,11 @@ Template.evaluation.events({
     console.log("insert please!");
     Evaluations.insert({ cardId, note });
 
-    // move to the next training card
-    nextCard();
+    Session.set('cardId', '');
+    Tracker.flush();
+    let nextCardId = nextCard();
+    Tracker.afterFlush(function() {
+      Session.set('cardId', nextCardId);
+    });
   }
 });

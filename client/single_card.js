@@ -4,30 +4,39 @@
 Template.singleCard.onCreated(function() {
   this.autorun(function() {
     if (FlowRouter.subsReady('cards')) {
-      nextCard();
+      Session.set('cardId', nextCard());
     }
   });
 });
 
 Template.singleCard.helpers({
-    currentCard: function(){
+  currentCard: function(){
+    const cardId = Session.get('cardId');
+    return Cards.findOne(cardId);
+  }
+});
 
-      const cardId = Session.get('cardId');
-
-      return Cards.findOne(cardId);
-    }
-
+Template.singleCard.animations({
+  ".card": {
+    animateInitial: true,
+    animateInitialStep: 100,
+    animateInitialDelay: 0,
+    container: ".card-viewer",
+    in: "animated fast fadeInRight",
+    out: "animated fast fadeOutLeft",
+  }
 });
 
 // global function, callable from somewhere else
 nextCard = function (){
-  const cards = Cards. find().fetch();
+  const cards = Cards.find().fetch();
   const randomId = parseInt((Math.random()*cards.length),10);
   //const chosenCardId = cards[randomId]._id;
 
   const chosenCardId = chooseCard();
 
   Session.set('cardId', chosenCardId);
+  return chosenCardId;
 }
 
 
