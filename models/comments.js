@@ -31,3 +31,9 @@ Comments.before.insert((userId, doc) => {
   doc.createdAt = new Date();
   doc.userId = userId;
 });
+
+Comments.helpers({
+  author: function() {
+    return Users.find(this.userId);
+  }
+});

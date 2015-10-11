@@ -12,3 +12,9 @@ Lessons.attachSchema({
   	optional: true,
   }
 });
+
+Lessons.helpers({
+  author: function() {
+    return Users.find(this.userId).username;
+  }
+});
