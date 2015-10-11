@@ -19,14 +19,12 @@ Template.singleCard.helpers({
 
 });
 
-function nextCard(){
+// global function, callable from somewhere else
+nextCard = function (){
+
   const cards = Cards. find().fetch();
   const randomId = parseInt((Math.random()*cards.length),10);
-  console.log(cards);
-  console.log(randomId);
   const cardId = cards[randomId]._id;
-  console.log(cardId);
 
-  Session.set('cardId', cardId)
-  console.log("passed");
+  Session.set('cardId', cardId);
 }
