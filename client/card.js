@@ -15,4 +15,4 @@ Template.card.events({
   'click .js-disclose-content'() {
     Template.instance().showComment.set(true);
   }
-})
+});
