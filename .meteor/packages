@@ -30,6 +30,7 @@ accounts-password
 # service-configuration
 underscore
 natestrauser:animate-css
+perak:markdown
 
 useraccounts:materialize
 materialize:materialize@=0.97.0
