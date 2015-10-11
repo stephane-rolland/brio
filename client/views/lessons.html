@@ -1,0 +1,10 @@
+<template name="lessons">
+  <div class="lessons">
+    <h2>Select a lesson</h2>
+	<div class="collection">
+	  {{#each lessons}}
+	  <a href="{{pathFor 'lesson'}}/{{_id}}" class="collection-item">{{title}}</a>
+	  {{/each}}
+	</div>
+  </div>
+</template>

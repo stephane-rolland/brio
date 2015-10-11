@@ -77,7 +77,7 @@ footer {
   }
 }
 
-#content .card {
+#content .card, #content .lessons {
   max-width: 600px;
   margin: 30px auto;
 }

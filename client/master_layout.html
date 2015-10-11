@@ -1,11 +1,12 @@
 <template name="masterLayout">
-  {{# if currentUser }}
-  <div id="content">
+  {{#if currentUser}}
+    <div id="content">
+      {{> Template.dynamic template=nav}}
+      {{> Template.dynamic template=main}}
+    </div>
+  {{else}}
     {{> Template.dynamic template=nav}}
     {{> Template.dynamic template=main}}
-  </div>
-  {{ else }}
-  	{{> Template.dynamic template=main}}
   {{/if}}
   {{> Template.dynamic template=footer}}
 </template>
