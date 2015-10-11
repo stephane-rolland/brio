@@ -115,6 +115,11 @@ footer {
   right: 0;
 }
 
+.listen-card {
+  cursor: pointer;
+  margin: 10px;
+}
+
 .lessons-viewer {
   max-width: 600px;
   margin: auto;
