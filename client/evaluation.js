@@ -7,7 +7,7 @@ Template.evaluation.events({
       Evaluations.insert({
         cardId:cardId,
         note:note
-        });
+      });
 
       nextCard();
     }

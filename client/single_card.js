@@ -21,9 +21,6 @@ Template.singleCard.helpers({
 
 // global function, callable from somewhere else
 nextCard = function (){
-
-  // resetComment();
-
   const cards = Cards. find().fetch();
   const randomId = parseInt((Math.random()*cards.length),10);
   const cardId = cards[randomId]._id;

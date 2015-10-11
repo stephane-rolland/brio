@@ -4,6 +4,8 @@ Meteor.startup(function() {
     return;
   }
 
+  console.log('=> Importing boilerplate lessons.')
+
   var userId = Accounts.createUser({
     username: 'admin',
     email: 'admin@brio.io',

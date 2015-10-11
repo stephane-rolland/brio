@@ -17,8 +17,6 @@ Evaluations.attachSchema({
 
 function onInsert(userId, doc)
 {
-  console.log(userId);
-
   doc.createdAt = new Date();
   doc.userId = userId;
 }
