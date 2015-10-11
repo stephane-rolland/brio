@@ -12,15 +12,16 @@ Meteor.startup(function() {
     password: 'admin'
   });
 
-  import_lesson_file(userId,'English words','default_lesson_english.txt');
-  import_lesson_file(userId,'Chinese words','default_lesson_chinese.txt');
+  import_lesson_file(userId, 'http://www.geonames.org/flags/x/uk.gif', 'English words','default_lesson_english.txt');
+  import_lesson_file(userId, 'http://www.geonames.org/flags/x/cn.gif', 'Chinese words','default_lesson_chinese.txt');
 
 });
 
-function import_lesson_file(userId, lessonTitle, filePath){
+function import_lesson_file(userId, imgUrl, lessonTitle, filePath){
 
   var lessonId = Lessons.insert({
     title: lessonTitle,
+    imgUrl: imgUrl,
     userId: userId
   });
 
