@@ -32,6 +32,18 @@ body {
   padding-top: 200px;
 }
 
+.home-concept {
+  padding-top: 50px;
+}
+
+.home-concept .card-demo {
+  float: right;
+  width: 400px;
+  margin: 10px;
+  box-shadow: 0px 0px 2px 0px #656565;
+  border-radius: 3px;
+}
+
 footer {
   position: absolute;
   bottom: 0;
