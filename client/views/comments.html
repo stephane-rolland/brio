@@ -14,7 +14,10 @@
 <template name="cardComment">
   <div class="card-action">
     {{#markdown}}{{content}}{{/markdown}}<br>
-    {{nbVotes}} vote(s) <a class="waves-effect waves-light btn blue {{#if userHasVoted}}darken{{else}}lighten{{/if}}-4 js-{{#if userHasVoted}}un{{/if}}like">+1</a>
+    <div class="clearfix">
+    <div class="left">{{nbVotes}} vote(s) <a class="waves-effect waves-light btn blue {{#if userHasVoted}}darken{{else}}lighten{{/if}}-4 js-{{#if userHasVoted}}un{{/if}}like">+1</a></div>
+    <div class="right">{{author.username}}</div>
+    </div>
   </div>
 </template>
 
