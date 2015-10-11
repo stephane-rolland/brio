@@ -23,9 +23,9 @@ Template.singleCard.helpers({
 nextCard = function (){
   const cards = Cards. find().fetch();
   const randomId = parseInt((Math.random()*cards.length),10);
-  //const chosenCardId = cards[randomId]._id;
+  const chosenCardId = cards[randomId]._id;
 
-  const chosenCardId = chooseCard();
+  //const chosenCardId = chooseCard();
 
   Session.set('cardId', chosenCardId);
 }
@@ -59,6 +59,7 @@ function chooseCard (){
     // si jamaias tiré le level 1 star , et que moins de 10 cartes avec 1 seule étoile
     // on prend la premiere qui n'a pas d'évaluation
     const cardId = getFirstCardWithoutEvaluation();
+    console.log(cardId);
     if (cardId === null)
     {
       return chooseCard();
