@@ -19,11 +19,9 @@ Template.evaluation.events({
 
     Session.set('cardId', '');
     Tracker.flush();
-    Meteor.defer(function() {
-      Session.set('cardId', cardId);
-      // move to the next training card
-      nextCard();
-    })
-
+    let nextCardId = nextCard();
+    Tracker.afterFlush(function() {
+      Session.set('cardId', nextCardId);
+    });
   }
 });

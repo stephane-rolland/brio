@@ -4,7 +4,7 @@
 Template.singleCard.onCreated(function() {
   this.autorun(function() {
     if (FlowRouter.subsReady('cards')) {
-      nextCard();
+      Session.set('cardId', nextCard());
     }
   });
 });
@@ -29,12 +29,10 @@ Template.singleCard.animations({
 
 // global function, callable from somewhere else
 nextCard = function (){
-  const cards = Cards. find().fetch();
+  const cards = Cards.find().fetch();
   const randomId = parseInt((Math.random()*cards.length),10);
   const chosenCardId = cards[randomId]._id;
-
-  //const chosenCardId = chooseCard();
-  Session.set('cardId', chosenCardId);
+  return chosenCardId;
 }
 
 
