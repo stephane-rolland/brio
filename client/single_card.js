@@ -65,6 +65,32 @@ function chooseCard (){
   {
       takeANewCard = false;
       console.log("No More New cards to learn");
+      const c1 = Cards.find({note:1}).fetch();
+      const c2 = Cards.find({note:2}).fetch();
+      const c3 = Cards.find({note:3}).fetch();
+      const c4 = Cards.find({note:4}).fetch();
+      const c5 = Cards.find({note:5}).fetch();
+
+      if(c1.length)
+      {
+        return c1[0]._id;
+      }
+      if(c2.length)
+      {
+        return c2[0]._id;
+      }
+      if(c3.length)
+      {
+        return c3[0]._id;
+      }
+      if(c4.length)
+      {
+        return c4[0]._id;
+      }
+      if(c5.length)
+      {
+        return c5[0]._id;
+      }
   }
 
   console.log("takeANewCard = " + takeANewCard)

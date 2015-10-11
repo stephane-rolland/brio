@@ -14,6 +14,7 @@ Meteor.startup(function() {
 
   import_lesson_file(userId, 'http://www.geonames.org/flags/x/uk.gif', 'English words','default_lesson_english.txt');
   import_lesson_file(userId, 'http://www.geonames.org/flags/x/cn.gif', 'Chinese words','default_lesson_chinese.txt');
+  import_lesson_file(userId, 'http://www.geonames.org/flags/x/cn.gif', 'Astronomy','default_lesson_astronomy.txt');
 
 });
 
@@ -29,11 +30,13 @@ function import_lesson_file(userId, imgUrl, lessonTitle, filePath){
   _.each(lines, function(line) {
     var parts = line.split('§');
     var word = parts[0].trim();
-    var definition = (parts[1] || '').trim();
+    var image = (parts[1] || '').trim();
+    var definition = (parts[2] || '').trim();
     var cardId = Cards.insert({
       text: word,
       inLessons: [lessonId],
       note: 0,
+      image: image,
     });
 
     if (definition) {

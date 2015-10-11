@@ -1,0 +1,10 @@
+ § /astronomy/delphinus.jpg § delphinus
+
+ § /astronomy/aquila.jpg § aquila 
+ § /astronomy/draco.jpg § draco
+ § /astronomy/cygnus.jpg § cygnus 
+ § /astronomy/corona_corealis.jpg § corona borealis
+ § /astronomy/pegasus.jpg § pegasus 
+ § /astronomy/cassopea.jpg § cassopea 
+ § /astronomy/pleiad.jpg § pleiad 
+ § /astronomy/orion.jpg § orion 
