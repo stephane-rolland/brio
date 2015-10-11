@@ -1,7 +1,9 @@
 <template name="nav">
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
-    <li><a id="nav-logout" href="/">Disconnect</a></li>
+    <li><a id="nav-logout" href="/"><i class="fa fa-cog left"></i> Settings</a></li>
+    <li class="divider"></li>
+    <li><a id="nav-logout" href="/"><i class="fa fa-power-off left"></i> Sign out</a></li>
   </ul>
 
   <nav>
@@ -10,7 +12,7 @@
         <a href="#" class="brand-logo center">Brio</a>
         {{#if currentUser}}
         <ul class="right hide-on-med-and-down">
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{user.username}}<i class="fa fa-caret-down right"></i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="fa fa-user left"></i> {{user.username}}<i class="fa fa-caret-down right"></i></a></li>
         </ul>
         <ul id="nav-mobile" class="right side-nav fixed">
           <!--li id="nav-home"><a href="{{pathFor 'home'}}">Home</a></li-->
