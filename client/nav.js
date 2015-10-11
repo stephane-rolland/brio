@@ -18,5 +18,6 @@ Template.nav.events({
   'click #nav-logout'() {
     Meteor.logout();
     FlowRouter.go('home');
+    FlowRouter.refresh();
   }
 });

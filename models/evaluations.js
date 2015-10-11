@@ -19,6 +19,7 @@ function onInsert(userId, doc)
 {
   doc.createdAt = new Date();
   doc.userId = userId;
+  console.log(userId);
 }
 
 Evaluations.before.insert(

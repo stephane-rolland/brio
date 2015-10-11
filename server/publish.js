@@ -18,7 +18,8 @@ Meteor.publishComposite('cards', function(lessonId) {
       },
       {
         find(card) {
-          return Evaluations.find({ userId: this.userId, cardId: card._id });
+          listEvaluations = Evaluations.find({ userId: this.userId, cardId: card._id });
+          return listEvaluations;
         }
       }
     ]
