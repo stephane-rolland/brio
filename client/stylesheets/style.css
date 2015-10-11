@@ -106,14 +106,10 @@ footer {
 .lessons-viewer {
   max-width: 600px;
   margin: auto;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  right: 0;
 }
 
 @media only screen and (max-width: 992px) {
-  .card-viewer .card, .lessons-viewer {
+  .card-viewer .card {
     margin: 0 15px;
   }
 }
