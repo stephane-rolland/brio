@@ -9,3 +9,10 @@ Template.nav.helpers({
     return Lessons.find();
   }
 });
+
+Template.nav.events({
+  'click #nav-logout'() {
+    Meteor.logout();
+    FlowRouter.reload();
+  }
+});
