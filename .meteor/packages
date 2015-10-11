@@ -36,6 +36,7 @@ fortawesome:fontawesome
 useraccounts:flow-routing
 
 # Utilities
+reactive-var
 kadira:blaze-layout
 kadira:flow-router
 arillo:flow-router-helpers
