@@ -17,4 +17,8 @@ Cards.attachSchema({
     type: [String],
     defaultValue: [],
   },
+  note:
+  {
+    type: Number || 0,
+  }
 });

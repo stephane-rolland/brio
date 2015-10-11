@@ -7,8 +7,8 @@ Meteor.startup(function() {
   console.log('=> Importing boilerplate lessons.')
 
   var userId = Accounts.createUser({
-    username: 'admin',
-    email: 'admin@brio.io',
+    username: 'admin2',
+    email: 'admin2@brio.io',
     password: 'admin'
   });
 
@@ -33,6 +33,7 @@ function import_lesson_file(userId, imgUrl, lessonTitle, filePath){
     var cardId = Cards.insert({
       text: word,
       inLessons: [lessonId],
+      note: 0,
     });
 
     if (definition) {
