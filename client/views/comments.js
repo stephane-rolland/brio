@@ -1,6 +1,6 @@
 Template.cardComments.helpers({
   comments() {
-    Comments.find({ cardId: Session.get('cardId') });
+    return Comments.find({ cardId: Session.get('cardId') });
   },
 });
 
@@ -18,7 +18,7 @@ Template.cardCommentAddForm.events({
       votes: [Meteor.userId()],
       language: 'fr',
     });
-    // Emptiy the textarea
+    // Empty the textarea
     textarea.val('');
   }
 });

@@ -6,6 +6,9 @@ Comments.attachSchema({
   userId: {
     type: String,
   },
+  cardId: {
+    type: String,
+  },
   content: {
     type: String,
   },
