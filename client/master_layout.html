@@ -1,6 +1,8 @@
 <template name="masterLayout">
   <div id="content">
+  	{{# if currentUser }}
     {{> Template.dynamic template=nav}}
+    {{/if}}
     {{> Template.dynamic template=main}}
   </div>
   {{> Template.dynamic template=footer}}
