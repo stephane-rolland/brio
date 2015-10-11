@@ -15,6 +15,6 @@ Lessons.attachSchema({
 
 Lessons.helpers({
   author: function() {
-    return Users.find(this.userId).username;
+    return Meteor.users.findOne(this.userId);
   }
 });

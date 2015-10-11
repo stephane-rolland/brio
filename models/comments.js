@@ -34,6 +34,6 @@ Comments.before.insert((userId, doc) => {
 
 Comments.helpers({
   author: function() {
-    return Users.find(this.userId);
+    return Meteor.users.findOne(this.userId);
   }
 });
