@@ -51,7 +51,7 @@ function chooseCard (){
   const workingArray = Cards.find().fetch().filter( (x) => isEvaluationAtGoodLevel(x, level) );
   const notEnoughNewCards = workingArray.length < 10;
 
-  const takeANewCard = (allCards.length ==0) /*|| (level==1 && notEnoughNewCards)*/;
+  const takeANewCard = (allCards.length ==0) || (workingArray.length == 0)/*|| (level==1 && notEnoughNewCards)*/;
 
   if (takeANewCard)  {
     console.log("take a new card!");
