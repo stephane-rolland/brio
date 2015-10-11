@@ -7,8 +7,10 @@ Template.evaluation.events({
       Evaluations.insert({
         cardId:cardId,
         note:note
-      });
+        });
 
       nextCard();
+
+      event.target.value = 0;
     }
 });
