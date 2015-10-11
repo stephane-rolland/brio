@@ -18,12 +18,12 @@
           <li id="nav-lessons"><a href="/lessons">All lessons</a></li>
           {{#each lessons}}
           {{#if imgUrl}}
-          <li id="nav-lesson-{{_id}}"><img class="lesson-image left" src="{{imgUrl}}" height="24" width="40"> <a href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
+          <li id="nav-lesson-{{_id}}"><img class="lesson-image left" src="{{imgUrl}}" height="24" width="40"> <a class="js-HACK-reload" href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
           {{else}}
-          <li id="nav-lesson-{{_id}}"><a href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
+          <li id="nav-lesson-{{_id}}"><a class="js-HACK-reload" href="{{pathFor 'lesson'}}/{{_id}}">{{title}}</a></li>
           {{/if}}
           {{/each}}
-          <li class="hide-on-large-only"><a id="nav-logout" href="/">Disconnect</a></li>
+          <li class="hide-on-large-only"><a class="js-HACK-reload" id="nav-logout" href="/">Disconnect</a></li>
         </ul>
         <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
         {{/if}}
