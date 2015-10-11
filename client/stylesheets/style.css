@@ -77,10 +77,57 @@ footer {
   }
 }
 
-#content .card, #content .lessons {
-  max-width: 600px;
-  margin: 30px auto;
+.card-viewer {
+  position: absolute;
+  top: 64px;
+  bottom: 64px;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 700px;
 }
+
+@media only screen and (min-width: 993px) {
+  .card-viewer {
+    left: 240px;
+  }
+}
+
+.card-viewer .card {
+  max-width: 600px;
+  margin: auto;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+}
+
+.lessons-viewer {
+  max-width: 600px;
+  margin: auto;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .card-viewer .card, .lessons-viewer {
+    margin: 0 15px;
+  }
+}
+
+/*.card-viewer {
+  border: 1px solid blue;
+  position: relative;
+}
+
+.card-viewer .card {
+  max-width: 600px;
+  margin: auto;
+  float: right;
+}*/
 
 .evaluation {
   width: 20%;
@@ -97,8 +144,8 @@ footer {
 }
 
 .evaluation img {
-  width: 75%;
-  margin: 0 12.5%;
+  width: 70%;
+  margin: 0 15%;
 }
 
 .clearfix:before,
@@ -109,4 +156,135 @@ footer {
 
 .clearfix:after {
   clear: both;
+}
+
+.link-container a,
+.shake-me {
+  display:block;
+  position:relative;
+}
+.shake-me:hover img {
+  -webkit-animation-name: linkQuake;
+    -moz-animation-name: linkQuake;
+      animation-name: linkQuake;
+  -webkit-animation-duration: 0.8s;
+    -moz-animation-duration: 0.8s;
+      animation-duration: 0.8s;
+  -webkit-transform-origin:50% 50%;
+    -moz-transform-origin:50% 50%;
+      transform-origin:50% 50%;
+  -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+      animation-timing-function: linear;
+}
+
+@keyframes linkQuake {
+  0%   {
+    transform: translate(2px, 1px)   rotate(0deg);
+  }
+  10%  {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20%  {
+    transform: translate(-3px, 0px)  rotate(1deg);
+  }
+  30%  {
+    transform: translate(0px, 2px)   rotate(0deg);
+  }
+  40%  {
+    transform: translate(1px, -1px)  rotate(1deg);
+  }
+  50%  {
+    transform: translate(-1px, 1px)  rotate(-1deg);
+  }
+  60%  {
+    transform: translate(-3px, -2px)  rotate(0deg);
+  }
+  70%  {
+    transform: translate(2px, 1px)   rotate(-1deg);
+  }
+  80%  {
+    transform: translate(-1px, -2px) rotate(1deg);
+  }
+  90%  {
+    transform: translate(2px, -1px)   rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px)  rotate(-1deg);
+  }
+}
+
+@-moz-keyframes linkQuake { /* Firefox */
+  0%   {
+    -moz-transform: translate(2px, 1px)   rotate(0deg);
+  }
+  10%  {
+    -moz-transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20%  {
+    -moz-transform: translate(-3px, 0px)  rotate(1deg);
+  }
+  30%  {
+    -moz-transform: translate(0px, 2px)   rotate(0deg);
+  }
+  40%  {
+    -moz-transform: translate(1px, -1px)  rotate(1deg);
+  }
+  50%  {
+    -moz-transform: translate(-1px, 1px)  rotate(-1deg);
+  }
+  60%  {
+    -moz-transform: translate(-3px, -2px)  rotate(0deg);
+  }
+  70%  {
+    -moz-transform: translate(2px, 1px)   rotate(-1deg);
+  }
+  80%  {
+    -moz-transform: translate(-1px, -2px) rotate(1deg);
+  }
+  90%  {
+    -moz-transform: translate(2px, -1px)   rotate(0deg);
+  }
+  100% {
+    -moz-transform: translate(1px, -2px)  rotate(-1deg);
+  }
+}
+
+@-webkit-keyframes linkQuake { /* Safari and Chrome */
+  0%   {
+    -webkit-transform: translate(2px, 1px)   rotate(0deg);
+  }
+  10%  {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20%  {
+    -webkit-transform: translate(-3px, 0px)  rotate(1deg);
+  }
+  30%  {
+    -webkit-transform: translate(0px, 2px)   rotate(0deg);
+  }
+  40%  {
+    -webkit-transform: translate(1px, -1px)  rotate(1deg);
+  }
+  50%  {
+    -webkit-transform: translate(-1px, 1px)  rotate(-1deg);
+  }
+  60%  {
+    -webkit-transform: translate(-3px, -2px)  rotate(0deg);
+  }
+  70%  {
+    -webkit-transform: translate(2px, 1px)   rotate(-1deg);
+  }
+  80%  {
+    -webkit-transform: translate(-1px, -2px) rotate(1deg);
+  }
+  90%  {
+    -webkit-transform: translate(2px, -1px)   rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px)  rotate(-1deg);
+  }
 }
