@@ -14,7 +14,7 @@ Meteor.startup(function() {
 
   import_lesson_file(userId, 'http://www.geonames.org/flags/x/uk.gif', 'English words','default_lesson_english.txt');
   import_lesson_file(userId, 'http://www.geonames.org/flags/x/cn.gif', 'Chinese words','default_lesson_chinese.txt');
-  import_lesson_file(userId, 'http://www.geonames.org/flags/x/cn.gif', 'Astronomy','default_lesson_astronomy.txt');
+  import_lesson_file(userId, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Solar_System_size_to_scale_fr.svg/langfr-280px-Solar_System_size_to_scale_fr.svg.png', 'Astronomy','default_lesson_astronomy.txt');
 
 });
 
