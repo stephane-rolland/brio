@@ -53,7 +53,11 @@ function chooseCard (){
   const allCards = Cards.find().fetch();
 
   const workingArray = Cards.find({note:level}).fetch();
-  const newCards = Cards.find({note:1}).fetch();
+
+  const cardsLevel1 = Cards.find({note:1}).fetch();
+  const cardsLevel2 = Cards.find({note:2}).fetch();
+  const newCards = cardsLevel1.concat(cardsLevel2)
+
   console.log("1 star cards = "+newCards.length);
   let takeANewCard = newCards.length < 10 ;
 
